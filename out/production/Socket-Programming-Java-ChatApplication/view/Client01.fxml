@@ -15,7 +15,7 @@
    <children>
       <AnchorPane prefHeight="89.0" prefWidth="476.0" style="-fx-background-color: #1D44F0;">
          <children>
-            <Label layoutX="35.0" layoutY="26.0" text="Name" textFill="WHITE">
+            <Label fx:id="userName" layoutX="35.0" layoutY="26.0" text="Name" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="26.0" />
                </font>
@@ -24,12 +24,12 @@
       </AnchorPane>
       <AnchorPane layoutX="21.0" layoutY="101.0" prefHeight="595.0" prefWidth="435.0" style="-fx-background-color: #1CA6F5; -fx-background-radius: 30;">
          <children>
-            <TextField layoutX="59.0" layoutY="503.0" prefHeight="56.0" prefWidth="290.0" promptText="Massage" style="-fx-background-radius: 50;">
+            <TextField fx:id="txtMassage" layoutX="59.0" layoutY="503.0" prefHeight="56.0" prefWidth="290.0" promptText="Massage" style="-fx-background-radius: 50;">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </TextField>
-            <JFXButton layoutX="352.0" layoutY="513.0" prefHeight="31.0" prefWidth="56.0">
+            <JFXButton layoutX="352.0" layoutY="513.0" onAction="#sendOnAction" prefHeight="31.0" prefWidth="56.0">
                <graphic>
                   <ImageView fitHeight="29.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -49,7 +49,7 @@
                   </LinearGradient>
                </ripplerFill>
             </JFXButton>
-            <ImageView fitHeight="36.0" fitWidth="31.0" layoutX="302.0" layoutY="516.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="36.0" fitWidth="31.0" layoutX="302.0" layoutY="516.0" onMouseClicked="#imgImportOnClick" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assest/camera.png" />
                </image>
@@ -57,7 +57,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="10.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="10.0" layoutY="512.0" onMouseClicked="#imojiOnClick" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assest/imoji.png" />
                </image>
@@ -65,7 +65,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <AnchorPane layoutX="10.0" layoutY="320.0" prefHeight="172.0" prefWidth="141.0" />
+            <AnchorPane fx:id="loadImojiPane" layoutX="10.0" layoutY="320.0" prefHeight="172.0" prefWidth="141.0" />
          </children>
       </AnchorPane>
    </children>
