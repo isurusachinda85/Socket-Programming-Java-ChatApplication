@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -16,6 +17,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.Socket;
@@ -37,6 +40,9 @@ public class Client01Controller implements Initializable {
 
     BufferedReader reader;
     PrintWriter writer;
+
+    private FileChooser fileChooser;
+    private File filePath;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -174,7 +180,11 @@ public class Client01Controller implements Initializable {
     }
     @FXML
     void imgImportOnClick(MouseEvent event) {
-
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Image");
+        this.filePath = fileChooser.showOpenDialog(stage);
+        writer.println(userName.getText() + " " + "img" + filePath.getPath());
     }
 
     @FXML
