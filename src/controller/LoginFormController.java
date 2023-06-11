@@ -19,7 +19,6 @@ public class LoginFormController {
         stage.setScene(new Scene(FXMLLoader.load(LoginFormController.class.getResource("../view/Client01.fxml"))));
         stage.close();
         stage.setTitle("Chat Application");
-//        stage.getIcons().add(new Image("assest/camera.png"));
         stage.centerOnScreen();
         stage.setResizable(false);
         stage.show();
